@@ -6,9 +6,6 @@ on:
   workflow_dispatch: {}
 permissions:
   contents: write
-imports:
-  aw:
-    - version: 1
 tools:
   github:
     repos:
