@@ -10,11 +10,10 @@ permissions:
 safe-outputs:
   create-pull-request: {}
 tools:
-  web_fetch: {}
+  web-fetch: {}
   github:
-    repos:
+    allowed-repos:
       - '.'
-    access: write
 network:
   allowed:
     - github
