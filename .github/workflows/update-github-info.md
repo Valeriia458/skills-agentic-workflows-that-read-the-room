@@ -7,6 +7,8 @@ on:
     - cron: '17 9 * * *'
 permissions:
   contents: read
+  issues: read
+  pull-requests: read
 safe-outputs:
   create-pull-request: {}
 tools:
