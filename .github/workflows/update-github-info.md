@@ -1,40 +1,41 @@
 ---
-name: Update GitHub Info
+name: update-github-info
+description: Draft website updates for Mona's GitHub Info site from official GitHub sources.
 on:
-  schedule:
-    - cron: '0 9 * * *' # daily at 09:00 UTC
   workflow_dispatch: {}
+  schedule:
+    - cron: '17 9 * * *'
 permissions:
   contents: read
+  issues: read
+  pull-requests: read
 safe-outputs:
   create-pull-request: {}
+tools:
+  web-fetch: {}
+  github:
+    allowed-repos:
+      - valeriia458/skills-agentic-workflows-that-read-the-room
+    min-integrity: none
 network:
   allowed:
-    - github.blog
+    - github
 ---
 
-## Description
+# Update Mona's GitHub Info website
 
-Agentic workflow: read notes and GitHub Blog pages, update site/content/github-info.md, and open a PR for Mona to review.
+Read `notes/mona-notes.md` before making changes.
 
-## Prompt
+Use these sources:
+- `notes/mona-notes.md`
+- GitHub Blog: https://github.blog/latest/
+- GitHub Changelog: https://github.blog/changelog/
 
-You are an assistant run by this agentic workflow. Perform these steps:
+Update `site/content/github-info.md` with concise,
+practical updates for readers and include source context when content comes
+from the GitHub Blog or GitHub Changelog.
 
-- Read the repository file `notes/mona-notes.md` and extract any updates or items relevant to GitHub platform changes.
-- Fetch and scrape content from the following URLs: https://github.blog/latest/ and https://github.blog/changelog/ (only the allowed domain `github.blog`).
-- Combine and summarize relevant items from the notes and fetched pages into an updated markdown content suitable for `site/content/github-info.md`.
-- Use the `edit` tool to update only `site/content/github-info.md` in a new branch. Do not write directly to `main`.
-- Use the `create-pull-request` tool (safe outputs enabled) to open a pull request targeting `main`. The PR should include a concise title, a summary of changes, and reference this workflow run.
-- Leave the PR as a proposal for Mona to review; do not merge.
-
-Rules and constraints:
-
-- Only modify `site/content/github-info.md` in this repository.
-- The workflow has edit access via the `edit` tool configuration and may use `web_fetch` only for `github.blog` domains.
-- Use `create-pull-request` with safe outputs so changes are proposed via a PR and not pushed directly to `main`.
- - Do not compile this workflow file automatically; do not run `gh aw compile` from this agent.
-
-## Usage
-
-Run on schedule (daily) or on demand via `workflow_dispatch`.
+Open a pull request for Mona to review. 
+Use a pull request title that mentions Mona or GitHub Info. 
+Do not write directly to `main`;
+rely on `safe-outputs` with `create-pull-request`.
