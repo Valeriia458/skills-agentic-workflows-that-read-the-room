@@ -14,6 +14,7 @@ tools:
   github:
     allowed-repos:
       - valeriia458/skills-agentic-workflows-that-read-the-room
+    min-integrity: none
 network:
   allowed:
     - github
