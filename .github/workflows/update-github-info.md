@@ -6,19 +6,6 @@ on:
   workflow_dispatch: {}
 permissions:
   contents: write
-tools:
-  github:
-    repos:
-      - '.'
-    access: write
-  web_fetch:
-    allowed_domains:
-      - github.blog
-  create-pull-request:
-    safe_outputs: true
-network:
-  allowed:
-    - https://github.blog
 ---
 
 ## Description
