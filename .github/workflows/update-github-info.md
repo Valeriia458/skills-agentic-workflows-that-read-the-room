@@ -8,6 +8,9 @@ permissions:
   contents: read
 safe-outputs:
   create-pull-request: {}
+network:
+  allowed:
+    - github.blog
 ---
 
 ## Description
