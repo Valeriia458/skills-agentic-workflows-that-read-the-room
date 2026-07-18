@@ -7,7 +7,7 @@ on:
 permissions:
   contents: read
 safe-outputs:
-  create-pull-request: true
+  create-pull-request: {}
 ---
 
 ## Description
