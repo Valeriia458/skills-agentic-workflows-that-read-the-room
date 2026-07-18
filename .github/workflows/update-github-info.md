@@ -5,7 +5,9 @@ on:
     - cron: '0 9 * * *' # daily at 09:00 UTC
   workflow_dispatch: {}
 permissions:
-  contents: write
+  contents: read
+safe-outputs:
+  create-pull-request: true
 ---
 
 ## Description
