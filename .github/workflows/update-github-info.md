@@ -13,7 +13,7 @@ tools:
   web-fetch: {}
   github:
     allowed-repos:
-      - Valeriia458/skills-agentic-workflows-that-read-the-room
+      - valeriia458/skills-agentic-workflows-that-read-the-room
 network:
   allowed:
     - github
