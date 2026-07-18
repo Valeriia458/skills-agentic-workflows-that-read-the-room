@@ -8,13 +8,12 @@ permissions:
   contents: write
 imports:
   aw:
-    version: 1
+    - version: 1
 tools:
   github:
-    edit:
-      repos:
-        - '.'
-      access: write
+    repos:
+      - '.'
+    access: write
   web_fetch:
     allowed_domains:
       - github.blog
