@@ -43,6 +43,7 @@ Rules and constraints:
 - Only modify `site/content/github-info.md` in this repository.
 - The workflow has edit access via the `edit` tool configuration and may use `web_fetch` only for `github.blog` domains.
 - Use `create-pull-request` with safe outputs so changes are proposed via a PR and not pushed directly to `main`.
+ - Do not compile this workflow file automatically; do not run `gh aw compile` from this agent.
 
 ## Usage
 
