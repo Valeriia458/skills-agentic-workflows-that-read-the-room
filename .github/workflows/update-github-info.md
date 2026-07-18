@@ -5,22 +5,12 @@ on:
     - cron: '0 9 * * *' # daily at 09:00 UTC
   workflow_dispatch: {}
 permissions:
-  contents: write
-aw:
-  version: 1
-tools:
-  edit:
-    repos:
-      - '.'
-    access: write
-  web_fetch:
-    allowed_domains:
-      - github.blog
-  create-pull-request:
-    safe_outputs: true
+  contents: read
+safe-outputs:
+  create-pull-request: {}
 network:
   allowed:
-    - https://github.blog
+    - github.blog
 ---
 
 ## Description
@@ -43,6 +33,7 @@ Rules and constraints:
 - Only modify `site/content/github-info.md` in this repository.
 - The workflow has edit access via the `edit` tool configuration and may use `web_fetch` only for `github.blog` domains.
 - Use `create-pull-request` with safe outputs so changes are proposed via a PR and not pushed directly to `main`.
+ - Do not compile this workflow file automatically; do not run `gh aw compile` from this agent.
 
 ## Usage
 
