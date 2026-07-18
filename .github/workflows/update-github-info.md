@@ -1,28 +1,23 @@
 ---
-name: Update GitHub Info
-on:
-  schedule:
-    - cron: '0 9 * * *' # daily at 09:00 UTC
-  workflow_dispatch: {}
----
 name: update-github-info
 description: Draft website updates for Mona's GitHub Info site from official GitHub sources.
 on:
-  workflow_dispatch:
+  workflow_dispatch: {}
   schedule:
-   - cron: '17 9 * * *'
+    - cron: '17 9 * * *'
+permissions:
+  contents: read
 safe-outputs:
-  create-pull-request:
-   title-prefix: "[mona] "
-   draft: true
-   fallback-as-issue: false
+  create-pull-request: {}
 tools:
-  edit:
-  web-fetch:
+  web_fetch: {}
+  github:
+    repos:
+      - '.'
+    access: write
 network:
   allowed:
-   - github.com
-   - github.blog
+    - github
 ---
 
 # Update Mona's GitHub Info website
