@@ -6,13 +6,15 @@ on:
   workflow_dispatch: {}
 permissions:
   contents: write
-aw:
-  version: 1
+imports:
+  aw:
+    version: 1
 tools:
-  edit:
-    repos:
-      - '.'
-    access: write
+  github:
+    edit:
+      repos:
+        - '.'
+      access: write
   web_fetch:
     allowed_domains:
       - github.blog
