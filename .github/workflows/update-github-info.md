@@ -19,7 +19,8 @@ tools:
     min-integrity: none
 network:
   allowed:
-    - github
+    - github.blog
+    - github.com
 ---
 
 # Update Mona's GitHub Info website
